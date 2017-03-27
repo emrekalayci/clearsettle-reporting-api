@@ -80,7 +80,19 @@ $app->singleton(
 
 $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(Swap\Laravel\SwapServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+
+// Register the facade
+$app->withFacades(true, [
+    Swap\Laravel\Facades\Swap::class => 'Swap'
+]);
+
+// Load the configuration
+$app->configure('swap');
+
+// Register the service provider
+$app->register(Swap\Laravel\SwapServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
