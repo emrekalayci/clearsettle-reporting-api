@@ -17,3 +17,19 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->email,
     ];
 });
+
+$factory->define(App\Client::class, function (Faker\Generator $faker) {
+   return [
+   ];
+});
+
+$factory->define(App\Acquirer::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
+
+$factory->define(App\Transaction::class, function (Faker\Generator $faker) {
+   return [
+   ];
+});
