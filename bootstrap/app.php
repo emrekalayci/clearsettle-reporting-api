@@ -80,7 +80,6 @@ $app->singleton(
 
 $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Providers\AuthServiceProvider::class);
-$app->register(Swap\Laravel\SwapServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 // Register the facade
