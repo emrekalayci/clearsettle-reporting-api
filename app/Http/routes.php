@@ -16,3 +16,13 @@ $app->get('/', function () use ($app) {
 });
 
 $app->post('/api/v3/merchant/user/login', 'AuthController@login');
+
+$app->group(['middleware' => 'auth:api'], function($app)
+{
+	$app->post('/api/v3/transactions/report', 'TransactionController@report');
+	$app->post('/api/v3/transactions/list', 'TransactionController@list');
+	$app->post('/api/v3/transaction', 'TransactionController@get');
+
+	$app->post('/api/v3/client', 'TransactionController@getClient');
+	$app->post('/api/v3/merchant', 'TransactionController@getMerchant');
+});
