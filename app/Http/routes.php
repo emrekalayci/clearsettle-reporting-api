@@ -14,3 +14,5 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->post('/api/v3/merchant/user/login', 'AuthController@login');
